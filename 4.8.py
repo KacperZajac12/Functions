@@ -1,7 +1,11 @@
 def time_string(hour, minutes,time_format):
     if time_format == "12":
-        time= f"{hour}:{minutes}am"
+        if hour > 10:
+            hour = int(hour) - 12   
+            time= f"{hour}:{minutes}am"
     else:
+        if hour == "24":
+            hour = "00"
         time= f"{hour}:{minutes}"
     return time
 
